@@ -22,10 +22,14 @@ export const WeatherIcons = {
 function App() {
   const [city,cityupdate]=useState();
   const[weather,weatherupdate]=useState();
-  const fetchweather=async(e)=>{
+  const fetchweather=(e)=>{
     e.preventDefault();
- const response= await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f815643c72ccefdf97e2ae23b757072b`);
- weatherupdate(response.data);
+   axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f815643c72ccefdf97e2ae23b757072b`).then(res=>{
+    weatherupdate(res.data);
+  }).catch(e=>{
+    console.log(e);
+  });
+ 
   }
   return (
     <div className='app'>
