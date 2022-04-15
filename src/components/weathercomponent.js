@@ -1,5 +1,7 @@
 
+import { WeatherIcons } from '../App';
 import '../css/weathercomponent.css';
+
 
 const WeatherinfoIcons={
     sunset:'/icons/temp.svg',
@@ -8,6 +10,7 @@ const WeatherinfoIcons={
     wind:'/icons/wind.svg',
     pressure:'/icons/pressure.svg'
 }
+
 const Weatherinfocontainer=(props)=>{
     return(
         <div className='weather-info-container'>
@@ -30,8 +33,8 @@ const WeatherComponent=(props)=>{
     return (
     <>
     <div className="weather">
-    <span>{`${Math.floor(weather?.main?.temp-273)} °C`}<span> | {weather?.weather[0].main}</span></span>
-    <img alt='weather fig' src="/icons/perfect-day.svg"/>
+    <span>{`${Math.floor(weather?.main?.temp-273)} °C`}<span> | {weather?.weather[0].description}</span></span>
+    <img alt='weather fig' src={WeatherIcons[weather?.weather[0].icon]}/>
     
     </div>
     <div>
@@ -43,6 +46,7 @@ const WeatherComponent=(props)=>{
 <Weatherinfocontainer name="humidity" value={weather?.main?.humidity}/>
 <Weatherinfocontainer name="wind" value={weather?.wind?.speed}/>
 <Weatherinfocontainer name="pressure" value={weather?.main?.pressure}/>
+
 </div>
 
     </>);
