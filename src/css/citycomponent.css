@@ -1,0 +1,36 @@
+.main-city-com{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 140px;
+    height: 140px;
+    margin: 40px auto;
+ 
+}
+.cityLabel{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px auto;
+text-align: center;
+}
+form{
+    border:1px solid black;
+}
+form >input{
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+}
+form>button{
+    padding: 10px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
