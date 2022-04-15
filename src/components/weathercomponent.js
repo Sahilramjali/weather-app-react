@@ -24,11 +24,13 @@ const WeatherComponent=(props)=>{
 
     const{weather}=props;
     const isday=weather?.weather[0].icon?.includes('d');
-   
+    const getTime=(timestamp)=>{
+        return `${new Date(timestamp*1000).getHours()}:${new Date(timestamp*1000).getMinutes()}`;
+    }
     return (
     <>
     <div className="weather">
-    <span>{}<span> | Cloudy</span></span>
+    <span>{`${Math.floor(weather?.main?.temp-273)} °C`}<span> | {weather?.weather[0].main}</span></span>
     <img alt='weather fig' src="/icons/perfect-day.svg"/>
     
     </div>
@@ -37,7 +39,7 @@ const WeatherComponent=(props)=>{
     </div>
     <div className='weather-info'>weather Info</div>
 <div className='weatherinfocontainer-main'>
-<Weatherinfocontainer name={isday? 'sunset':'sunrise'} value={isday? 'sunset':'sunrise'}/>
+<Weatherinfocontainer name={isday? 'sunset':'sunrise'} value={getTime(weather?.sys[isday?"sunset":"sunrise"])}/>
 <Weatherinfocontainer name="humidity" value={weather?.main?.humidity}/>
 <Weatherinfocontainer name="wind" value={weather?.wind?.speed}/>
 <Weatherinfocontainer name="pressure" value={weather?.main?.pressure}/>
