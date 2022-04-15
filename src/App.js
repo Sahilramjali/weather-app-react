@@ -24,7 +24,7 @@ function App() {
   const[weather,weatherupdate]=useState();
   const fetchweather=async(e)=>{
     e.preventDefault();
- const response= await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f815643c72ccefdf97e2ae23b757072b`);
+ const response= await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid={apikey}`);//api key is unique for users.
  weatherupdate(response.data);
   }
   return (
