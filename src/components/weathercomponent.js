@@ -2,13 +2,18 @@
 import { WeatherIcons } from '../App';
 import '../css/weathercomponent.css';
 
-
+import {sunset } from '../assets/icons/temp.svg';
+import {sunrise } from '../assets/icons/sunny.svg';
+import {humidity} from '../assets/icons/humidity.svg';
+import {wind} from '../assets/icons/wind.svg';
+import {pressure} from '../assets/icons/pressure.svg';
 const WeatherinfoIcons={
-    sunset:'/icons/temp.svg',
-    sunrise:'/icons/temp.svg',
-    humidity:'/icons/humidity.svg',
-    wind:'/icons/wind.svg',
-    pressure:'/icons/pressure.svg'
+    
+    sunset:sunset,
+    sunrise:sunrise,
+    humidity:humidity,
+    wind:wind,
+    pressure:pressure
 }
 
 const Weatherinfocontainer=(props)=>{
