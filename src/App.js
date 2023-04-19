@@ -24,11 +24,11 @@ function App() {
   const[weather,weatherupdate]=useState();
   const fetchweather=(e)=>{
     e.preventDefault();
-   axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f815643c72ccefdf97e2ae23b757072b`).then(res=>{
+   axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid={apikey}`).then(res=>{
     weatherupdate(res.data);
   }).catch(e=>{
     console.log(e);
-  });
+  });//use your own api key in apikeyid
  
   }
   return (
