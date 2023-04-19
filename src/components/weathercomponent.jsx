@@ -2,11 +2,11 @@
 import { WeatherIcons } from '../App';
 import '../css/weathercomponent.css';
 
-import {sunset } from '../assets/icons/temp.svg';
-import {sunrise } from '../assets/icons/sunny.svg';
-import {humidity} from '../assets/icons/humidity.svg';
-import {wind} from '../assets/icons/wind.svg';
-import {pressure} from '../assets/icons/pressure.svg';
+import sunset  from '../assets/icons/temp.svg';
+import sunrise from '../assets/icons/sunny.svg';
+import humidity from '../assets/icons/humidity.svg';
+import wind from '../assets/icons/wind.svg';
+import pressure from '../assets/icons/pressure.svg';
 const WeatherinfoIcons={
     
     sunset:sunset,
@@ -16,13 +16,13 @@ const WeatherinfoIcons={
     pressure:pressure
 }
 
-const Weatherinfocontainer=(props)=>{
+const Weatherinfocontainer=({name,value})=>{
     return(
         <div className='weather-info-container'>
-            <img className='infoicon' src={WeatherinfoIcons[props.name]}/>
+            <img className='infoicon' src={WeatherinfoIcons[name]}/>
              <div className='infolabel'>
-                 {props.value}
-                <span>{props.name}</span>
+                 {value}
+                <span>{name}</span>
              </div>
         </div>
     );
