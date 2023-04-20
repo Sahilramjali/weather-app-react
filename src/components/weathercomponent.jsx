@@ -1,5 +1,5 @@
 
-import { WeatherIcons } from '../App';
+// import { WeatherIcons } from '../App';
 import '../css/weathercomponent.css';
 
 import sunset  from '../assets/icons/temp.svg';
@@ -7,6 +7,7 @@ import sunrise from '../assets/icons/sunny.svg';
 import humidity from '../assets/icons/humidity.svg';
 import wind from '../assets/icons/wind.svg';
 import pressure from '../assets/icons/pressure.svg';
+import { useEffect } from 'react';
 const WeatherinfoIcons={
     
     sunset:sunset,
@@ -31,7 +32,9 @@ const WeatherComponent=(props)=>{
     console.log(props);
 
     const{weather}=props;
+   
     const isday=weather?.weather[0].icon?.includes('d');
+    console.log(weather);
     const getTime=(timestamp)=>{
         return `${new Date(timestamp*1000).getHours()}:${new Date(timestamp*1000).getMinutes()}`;
     }
@@ -39,7 +42,9 @@ const WeatherComponent=(props)=>{
     <>
     <div className="weather">
     <span>{`${Math.floor(weather?.main?.temp-273)} °C`}<span> | {weather?.weather[0].description}</span></span>
-    <img alt='weather fig' src={WeatherIcons[weather?.weather[0].icon]}/>
+    <img alt='weather fig' src={`http://openweathermap.org/img/w/${weather?.weather[0].icon}.png`}
+    // {WeatherIcons[weather?.weather[0].icon]}
+    />
     
     </div>
     <div>

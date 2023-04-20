@@ -4,22 +4,22 @@ import { useState } from 'react';
 import './css/app.css';
 import axios from 'axios';
 import Error from './components/error';
-export const WeatherIcons = {
-  "01d": "../assets/icons/sunny.svg",
-  "01n": "../assets/icons/night.svg",
-  "02d": "../assets/icons/day.svg",
-  "02n": "../assets/icons/cloudy-night.svg",
-  "03d": "../assets/icons/cloudy.svg",
-  "03n": "../assets/icons/cloudy.svg",
-  "04d": "../assets/icons/perfect-day.svg",
-  "04n": "../assets/icons/cloudy-night.svg",
-  "09d": "../assets/icons/rain.svg",
-  "09n": "../assets/icons/rain-night.svg",
-  "10d": "../assets/icons/rain.svg",
-  "10n": "../assets/icons/rain-night.svg",
-  "11d": "../assets/icons/storm.svg",
-  "11n": "../assets/icons/storm.svg",
-};
+// export const WeatherIcons = {
+//   "01d": "../src/assets/icons/sunny.svg",
+//   "01n": "../src/assets/icons/night.svg",
+//   "02d": "../src/assets/icons/day.svg",
+//   "02n": "../src/assets/icons/cloudy-night.svg",
+//   "03d": "../src/assets/icons/cloudy.svg",
+//   "03n": "../src/assets/icons/cloudy.svg",
+//   "04d": "../src/assets/icons/perfect-day.svg",
+//   "04n": "../src/assets/icons/cloudy-night.svg",
+//   "09d": "../src/assets/icons/rain.svg",
+//   "09n": "../src/assets/icons/rain-night.svg",
+//   "10d": "../src/assets/icons/rain.svg",
+//   "10n": "../src/assets/icons/rain-night.svg",
+//   "11d": "../src/assets/icons/storm.svg",
+//   "11n": "../src/assets/icons/storm.svg",
+// };
 function App() {
 
   const [city,cityupdate]=useState();
